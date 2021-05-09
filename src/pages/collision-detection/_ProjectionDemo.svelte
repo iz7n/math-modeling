@@ -31,7 +31,7 @@
         const mouse = vec2(p.mouseX, p.mouseY);
         const min = Vector2.sub(r1.position, Vector2.div(r1.size, 2));
         const max = Vector2.add(min, r1.size);
-        const clampped = mouse.clamp(min, max);
+        const clampped = Vector2.clamp(mouse, min, max);
         if (clampped.equals(mouse)) {
           dragging = true;
           dmouse.set(Vector2.sub(r1.position, mouse));

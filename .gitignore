@@ -1,6 +1,7 @@
 # Build
 build/
 public/.routify/
+.firebase/
 
 # Node
 node_modules/
