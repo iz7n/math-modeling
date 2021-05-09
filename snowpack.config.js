@@ -5,7 +5,8 @@ module.exports = {
     knownEntrypoints: ['@roxi/routify/runtime/buildRoutes']
   },
   alias: {
-    $components: './src/components/'
+    $components: './src/components/',
+    $shared: './src/shared/'
   },
   mount: {
     src: '/dist',
