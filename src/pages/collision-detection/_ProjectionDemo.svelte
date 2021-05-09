@@ -38,8 +38,10 @@
         }
       };
       p.mouseDragged = () => {
-        const mouse = vec2(p.mouseX, p.mouseY);
-        r1.position.set(Vector2.add(mouse, dmouse));
+        if (dragging) {
+          const mouse = vec2(p.mouseX, p.mouseY);
+          r1.position.set(Vector2.add(mouse, dmouse));
+        }
       };
       p.mouseReleased = () => (dragging = false);
 
