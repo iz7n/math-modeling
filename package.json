@@ -20,8 +20,9 @@
     "deploy:firebase": "firebase deploy"
   },
   "dependencies": {
-    "@limitlesspc/limitless": "^1.1.5",
+    "@limitlesspc/limitless": "^1.1.7",
     "@roxi/routify": "^2.18.0",
+    "glsl-noise": "0.0.0",
     "p5": "^1.3.1",
     "svelte": "^3.38.2"
   },
@@ -43,6 +44,7 @@
     "postcss-cli": "^8.3.1",
     "sass": "^1.32.12",
     "snowpack": "^3.3.7",
+    "snowpack-plugin-glslify": "^1.0.0",
     "svelte-check": "^1.5.2",
     "svelte-preprocess": "^4.7.3",
     "typescript": "^4.2.4"

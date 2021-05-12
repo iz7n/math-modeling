@@ -1,6 +1,10 @@
 /** @type {import('snowpack').SnowpackUserConfig} */
 module.exports = {
-  plugins: ['@snowpack/plugin-svelte', '@snowpack/plugin-postcss'],
+  plugins: [
+    '@snowpack/plugin-svelte',
+    '@snowpack/plugin-postcss',
+    ['snowpack-plugin-glslify', { compress: false }]
+  ],
   packageOptions: {
     knownEntrypoints: ['@roxi/routify/runtime/buildRoutes']
   },
