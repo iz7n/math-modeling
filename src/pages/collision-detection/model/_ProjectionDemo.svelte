@@ -4,6 +4,7 @@
   import {
     AABB,
     degrees,
+    overlap,
     Rect,
     vec2,
     Vector2,
@@ -16,7 +17,10 @@
   const world = new World();
   let r1: AABB;
   let r2: Rect;
-  let rects: { shape: AABB; color: p5.Color }[];
+  let rects: [
+    { shape: AABB; color: p5.Color },
+    { shape: AABB; color: p5.Color }
+  ];
 
   let angle = 0.57;
   $: axis = vec2(1, 0).setAngle(angle);
@@ -35,8 +39,8 @@
         r2 = new Rect(p.width / 2 + 50, p.height / 2, 50, 75);
         world.bodies.push(r1, r2);
         rects = [
-          { shape: r1, color: p.color(108, 174, 240, 150) },
-          { shape: r2, color: p.color(245, 157, 103, 150) }
+          { shape: r1, color: p.color(108, 174, 240) },
+          { shape: r2, color: p.color(245, 157, 103) }
         ];
       };
 
@@ -76,7 +80,7 @@
           angle,
           vec2(p.width / 2, p.height / 2)
         );
-        rects.forEach(({ shape, color }) => {
+        const projections = rects.map(({ shape, color }) => {
           shape.position.sub(offset);
           const [min, max] = shape.project(axis);
           shape.position.add(offset);
@@ -85,8 +89,18 @@
           p.strokeWeight(10);
           p.strokeCap(p.SQUARE);
           p.line(min, 0, max, 0);
-          p.strokeWeight(1);
+
+          return [min, max] as const;
         });
+
+        const [p1, p2] = projections;
+        const o = overlap(...p1, ...p2);
+        if (o > 0) {
+          const values = [...p1, ...p2];
+          const [min, max] = values.minmax();
+          p.stroke(255, 0, 0);
+          p.line(min, 0, max, 0);
+        }
 
         p.pop();
 
@@ -99,9 +113,9 @@
 
 <h3>Projecting along an axis</h3>
 <p>Click and drag the pink rectangle to see different results.</p>
+<div bind:this={container} />
 <input type="range" min={0} max={2 * Math.PI} step={0.01} bind:value={angle} />
 <span>{(angle / Math.PI).toFixed(2)}π rad ({degrees(angle).toFixed(0)}°)</span>
-<div bind:this={container} />
 
 <style>
   div :global(canvas) {
