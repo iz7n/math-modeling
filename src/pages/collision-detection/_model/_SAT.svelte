@@ -1,5 +1,6 @@
 <script lang="ts">
   import ProjectionDemo from './_ProjectionDemo.svelte';
+  import DotProductDemo from './_DotProductDemo.svelte';
 </script>
 
 <h3>Separating Axis Theorem (SAT)</h3>
@@ -18,3 +19,5 @@
 </p>
 
 <ProjectionDemo />
+
+<DotProductDemo />

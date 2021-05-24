@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import p5 from 'p5';
   import {
-    AABB,
     degrees,
     overlap,
     Rect,
@@ -14,12 +13,12 @@
   let container: HTMLDivElement;
   let p: p5;
 
-  const world = new World();
-  let r1: AABB;
+  const world = new World(0, 0, 450, 450);
+  let r1: Rect;
   let r2: Rect;
   let rects: [
-    { shape: AABB; color: p5.Color },
-    { shape: AABB; color: p5.Color }
+    { shape: Rect; color: p5.Color },
+    { shape: Rect; color: p5.Color }
   ];
 
   let angle = 0.57;
@@ -35,7 +34,7 @@
         p.createCanvas(450, 450);
         p.rectMode(p.CENTER);
 
-        r1 = new AABB(p.width / 2 - 50, p.height / 2, 50, 75);
+        r1 = new Rect(p.width / 2 - 50, p.height / 2, 50, 75);
         r2 = new Rect(p.width / 2 + 50, p.height / 2, 50, 75);
         world.bodies.push(r1, r2);
         rects = [
@@ -45,7 +44,7 @@
       };
 
       p.mousePressed = () => {
-        const mouse = vec2(p.mouseX, p.height - p.mouseY);
+        const mouse = vec2(p.mouseX, p.mouseY);
         const min = Vector2.sub(r1.position, Vector2.div(r1.size, 2));
         const max = Vector2.add(min, r1.size);
         const clampped = Vector2.clamp(mouse, min, max);
@@ -56,7 +55,7 @@
       };
       p.mouseDragged = () => {
         if (dragging) {
-          const mouse = vec2(p.mouseX, p.height - p.mouseY);
+          const mouse = vec2(p.mouseX, p.mouseY);
           r1.position.set(Vector2.add(mouse, dmouse));
         }
       };
@@ -67,7 +66,7 @@
 
         p.push();
         p.translate(p.width / 2, p.height / 2);
-        p.rotate(-angle);
+        p.rotate(angle);
         p.translate(-p.width / 2, -axisDist);
 
         p.stroke(0);
@@ -112,7 +111,7 @@
 </script>
 
 <h3>Projecting along an axis</h3>
-<p>Click and drag the pink rectangle to see different results.</p>
+<p>Click and drag the vertical rectangle to see different results.</p>
 <div bind:this={container} />
 <input type="range" min={0} max={2 * Math.PI} step={0.01} bind:value={angle} />
 <span>{(angle / Math.PI).toFixed(2)}π rad ({degrees(angle).toFixed(0)}°)</span>
