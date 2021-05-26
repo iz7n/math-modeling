@@ -10,7 +10,3 @@
 </script>
 
 <span bind:this={container} />
-
-<style>
-  @import 'katex/dist/katex.min.css';
-</style>

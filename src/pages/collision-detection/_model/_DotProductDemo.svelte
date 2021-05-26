@@ -54,9 +54,13 @@
 <h3>Dot product</h3>
 <p>Given two vectors <Math tex="a" /> and <Math tex="b" /></p>
 <Math tex="dot \ product = a_x \cdot b_x + a_y \cdot b_y" />
-<p>If this were done in the <Math tex="d" />-D dimension, then</p>
-<Math tex="\ dot \ product = \displaystyle\sum_{'{'}i=1}^d a_i \cdot b_i" />
-<p>One of the vectors will follow your mouse.</p>
+<p>If this were done in the <Math tex="d" />th dimension, then</p>
+<Math tex="dot \ product = \displaystyle\sum_{'{'}i=1}^d a_i \cdot b_i" />
+<p>
+  If one of the vectors are normalized (a vector of length 1), then the dot
+  product will act as a shadow.
+</p>
+<p>The blue vector will follow your mouse.</p>
 <div bind:this={container} />
 
 <style>

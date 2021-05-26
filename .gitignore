@@ -2,6 +2,7 @@
 build/
 public/.routify/
 .firebase/
+*.log
 
 # Node
 node_modules/
