@@ -111,14 +111,16 @@
 </script>
 
 <h3>Projecting along an axis</h3>
-<p>Click and drag the vertical rectangle to see different results.</p>
+<p>
+  Click and drag the vertical rectangle to see different results. The blue and
+  orange lines represent the "shadows" that the rectangles cast on to the wall.
+</p>
 <div bind:this={container} />
 <input type="range" min={0} max={2 * Math.PI} step={0.01} bind:value={angle} />
 <span>{(angle / Math.PI).toFixed(2)}π rad ({degrees(angle).toFixed(0)}°)</span>
 
 <style>
   div :global(canvas) {
-    border: 4px solid black;
     border-radius: 50%;
   }
 </style>

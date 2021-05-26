@@ -54,5 +54,6 @@
     width: 100%;
     height: 30%;
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+    border: none;
   }
 </style>

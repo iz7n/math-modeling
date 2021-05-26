@@ -44,9 +44,3 @@
 </p>
 <p>Blue lines represent normals.</p>
 <div bind:this={container} />
-
-<style>
-  div :global(canvas) {
-    border: 4px solid black;
-  }
-</style>

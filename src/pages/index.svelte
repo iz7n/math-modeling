@@ -9,13 +9,12 @@
   const links: Link[] = [
     {
       title: 'Desk Arrangement',
-      desc:
-        'Trying to fit as many desks in a classroom as possible while maintaining social distancing protocals.',
+      desc: 'Trying to fit as many desks in a classroom as possible while maintaining social distancing protocals.',
       route: '/desk-arrangement'
     },
     {
       title: 'Optimizing Game Collision Detection',
-      desc: '',
+      desc: 'Finding the optimal way to detect collision between a large system of objects.',
       route: '/collision-detection'
     }
   ];

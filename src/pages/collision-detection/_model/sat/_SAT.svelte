@@ -8,7 +8,7 @@
 <h3>Separating Axis Theorem (SAT)</h3>
 <p>
   In non mathematical terms, the Separating Axis Theorem is a way to determine
-  weather or not 2 convex shapes are intersecting or colliding.
+  whether or not 2 convex shapes are intersecting or colliding.
 </p>
 <p>
   Imagine you are in a room with a flashlight that emits light perfectly
@@ -21,6 +21,12 @@
 </p>
 
 <ProjectionDemo />
+
+<p>
+  The question is: how many times do you check for a gap? A computer can't walk
+  around the objects and check infinitely many times so how is it done?
+</p>
+<p>The answer to that is using normals.</p>
 
 <NormalDemo />
 
@@ -44,4 +50,23 @@ length of the vector.
 <p>
   <u>Note</u>: the position of the axis does not matter, it is just for display
   purposes.
+</p>
+
+<h3>Putting it together</h3>
+
+<p>
+  For each normal of both shapes being checked, calculate the dot product of all
+  vertices with that normal. Find the minimum and maximum dot products for both
+  shapes and compare them. If there is a gap between the two ranges, then you
+  know for certain that the shapes are not colliding, if you have gone through
+  every normal and no gap has been found, then you know for certain that the
+  shapes are colliding.
+</p>
+<p>
+  Now if you think that seems like a lot for work for checking a collision
+  between two convex polygons, then good because it is.
+</p>
+<p>
+  Next we are going to compare different methods of minimizing these checks for
+  optimization.
 </p>

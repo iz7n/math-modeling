@@ -10,6 +10,8 @@
 
   const v = vec2(200, -100);
   const vn = Vector2.normalize(v);
+  let mouse = vec2();
+  $: d = mouse.dot(vn);
 
   onMount(() => {
     p = new p5((p: p5) => {
@@ -21,7 +23,7 @@
         p.background(255);
         p.translate(p.width / 2, p.height / 2);
 
-        const mouse = vec2(p.mouseX - p.width / 2, p.mouseY - p.height / 2);
+        mouse = vec2(p.mouseX - p.width / 2, p.mouseY - p.height / 2);
 
         p.strokeWeight(2);
         p.stroke(66, 135, 245);
@@ -29,7 +31,6 @@
         p.stroke(235, 64, 52);
         drawVec2(v);
 
-        const d = mouse.dot(vn);
         const n = Vector2.mult(vn, d);
 
         p.stroke(0);
@@ -60,11 +61,9 @@
   If one of the vectors are normalized (a vector of length 1), then the dot
   product will act as a shadow.
 </p>
-<p>The blue vector will follow your mouse.</p>
+<p>
+  The blue vector will follow your mouse and a black line will represent the dot
+  product.
+</p>
 <div bind:this={container} />
-
-<style>
-  div :global(canvas) {
-    border: 4px solid black;
-  }
-</style>
+<p>Dot product = {d.toFixed(1)}</p>
