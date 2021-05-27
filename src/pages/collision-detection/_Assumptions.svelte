@@ -6,7 +6,7 @@
     <i>
       This is the most important assumption because, as I will later go in to,
       the Separating Axis Theorem requires that both shapes are convex to
-      accurately determine whether or not a collision has occured.
+      accurately determine whether or not a collision has occurred.
     </i>
   </li>
   <li>

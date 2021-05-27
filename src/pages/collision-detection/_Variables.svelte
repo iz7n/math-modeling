@@ -16,7 +16,7 @@
     </tr>
     <tr>
       <td>Quadtree capacity</td>
-      <td>The maximum number of object in each quadtree cell</td>
+      <td>The maximum number of objects in each quadtree cell</td>
       <td>4</td>
     </tr>
     <tr>
