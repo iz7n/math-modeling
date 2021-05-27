@@ -120,7 +120,7 @@
 <span>{(angle / Math.PI).toFixed(2)}π rad ({degrees(angle).toFixed(0)}°)</span>
 <p>
   Notice how if the two rectangles are colliding, then their shadows will never
-  have a gap or become red, so matter the projection angle.
+  have a gap or become red, no matter the projection angle.
 </p>
 
 <style>

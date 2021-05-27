@@ -3,6 +3,12 @@
 <ul>
   <li>
     <a
+      href="https://github.com/limitlesspc/math-modeling/tree/main/src/pages/collision-detection"
+      >Source code</a
+    >
+  </li>
+  <li>
+    <a
       href="https://gamedevelopment.tutsplus.com/tutorials/collision-detection-using-the-separating-axis-theorem--gamedev-169"
     >
       Collision Detection Using the Separating Axis Theorem

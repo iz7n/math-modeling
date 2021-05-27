@@ -26,6 +26,16 @@
   </ul>
 </div>
 
+<h3>Future Use</h3>
+
+<p>
+  The Separating Axis Theorem is not the only way to detect collisions between
+  polygons. There is also the Gilbert-Johnson-Keerthi algorithm which may be
+  faster than the Separating Axis Theorem, but more complicated. More that could
+  be added is some comparisons in the speed of the Gilbert-Johnson-Keerthi
+  algorithm vs. that of the Separating Axis Theorem.
+</p>
+
 <p>
   If I had more time to make this paper, I would like to go more in-depth into
   the Separating Axis Theorem as a whole, bringing together the ideas discussed
