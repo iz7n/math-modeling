@@ -118,6 +118,10 @@
 <div bind:this={container} />
 <input type="range" min={0} max={2 * Math.PI} step={0.01} bind:value={angle} />
 <span>{(angle / Math.PI).toFixed(2)}π rad ({degrees(angle).toFixed(0)}°)</span>
+<p>
+  Notice how if the two rectangles are colliding, then their shadows will never
+  have a gap or become red, so matter the projection angle.
+</p>
 
 <style>
   div :global(canvas) {

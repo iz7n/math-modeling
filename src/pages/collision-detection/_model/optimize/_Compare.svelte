@@ -1,13 +1,13 @@
 <h3>Naive vs. Spatial Hash Grid vs. Quadtree</h3>
 
 <p>
-  Using 1,000 objects and checking 1,000 times with 3 trials, the times that
-  each method of optimization took was:
+  Using 1,000 objects and checking the entire sysytem 1,000 times with 3 trials,
+  the times that each method of optimization took was:
 </p>
 
 <p>
   The Spatial Hash Grid had a division size of 80 and the Quadtree had a
-  capacity of 4
+  capacity of 4.
 </p>
 
 <table>

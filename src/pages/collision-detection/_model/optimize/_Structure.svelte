@@ -70,13 +70,21 @@
     single object.
   </p>
   <p>Division/cell size: 80 pixels</p>
+  <p>
+    <u>Note</u>: There is some physics happening to resolve the collisions,
+    however, this paper only goes into the detection of collisions.
+  </p>
 {:else}
-  <h3>Quadtree</h3>
+  <h3>Quadtree (my favorite)</h3>
   <p>
     A Quadtree divides the space into 4 quadrants. Each quadrant can hold a
-    certain number of object, known as its <i>capacity</i>. If the number of
-    objects goes past the capacity, then that quadrant is divided up into 4 more
-    quadrants.
+    certain number of objects, known as its <i>capacity</i>. If the number of
+    objects goes past the capacity in a certain quadrant, then that quadrant is
+    divided up into 4 more quadrants.
+  </p>
+  <p>
+    Due to the fact that the quadtree recursively divides itself when needed, it
+    can appear fractal-like or self-similar.
   </p>
   <p>Capacity: 1</p>
 {/if}

@@ -62,7 +62,7 @@
   product will act as a shadow.
 </p>
 <p>
-  The blue vector will follow your mouse and a black line will represent the dot
+  The blue vector will follow your mouse and a black line represents the dot
   product.
 </p>
 <div bind:this={container} />

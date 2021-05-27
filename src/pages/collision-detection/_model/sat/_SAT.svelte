@@ -8,7 +8,7 @@
 <h3>Separating Axis Theorem (SAT)</h3>
 <p>
   In non mathematical terms, the Separating Axis Theorem is a way to determine
-  whether or not 2 convex shapes are intersecting or colliding.
+  whether or not two convex shapes are intersecting or colliding.
 </p>
 <p>
   Imagine you are in a room with a flashlight that emits light perfectly
@@ -16,15 +16,15 @@
   not they are intersecting, you turn on you flashlight and point it at the
   objects. You then proceed to walk in a circle around the objects observing the
   shadows they cast on the wall. If at any time during your walk you see a gap
-  in their 2 shadows, then they must not be intersecting. However, if you never
-  see a gap, then they must be intersecting.
+  in their two shadows, then they must not be intersecting. However, if you
+  never see a gap, then they must be intersecting.
 </p>
 
 <ProjectionDemo />
 
 <p>
-  The question is: how many times do you check for a gap? A computer can't walk
-  around the objects and check infinitely many times so how is it done?
+  So, the question is: how many times do you check for a gap? A computer can't
+  walk around the objects and check infinitely many times so how is it done?
 </p>
 <p>The answer to that is using normals.</p>
 
