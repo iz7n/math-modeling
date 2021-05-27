@@ -8,6 +8,10 @@
 </script>
 
 <h1>Optimizing Game Collision Detection</h1>
+<h4>
+  Given a system of objects, what is the best and most efficient way to detect
+  collisions between them?
+</h4>
 
 <Summary />
 
